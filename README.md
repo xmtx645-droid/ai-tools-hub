@@ -1,110 +1,190 @@
-# AI工具导航网站 - 使用说明
+# 🤖 AI工具导航 - AI Tools Hub
 
-## 📁 网站文件列表
+> 专业的AI工具导航网站，精选ChatGPT、Midjourney等最新AI工具
 
-✅ index.html - 首页（包含AI工具分类展示）
-✅ style.css - 样式文件（统一的视觉效果）
-✅ tool-chatgpt.html - ChatGPT详情页
-✅ tool-midjourney.html - Midjourney详情页
-✅ tool-deepseek.html - DeepSeek详情页
-
-## 🚀 如何打开网站
-
-### 方法1：直接双击打开（最简单）
-1. 打开文件夹：D:\ai-tools-website
-2. 找到 index.html 文件
-3. 双击打开，会在浏览器中显示
-
-### 方法2：右键选择浏览器打开
-1. 右键点击 index.html
-2. 选择"打开方式"
-3. 选择你喜欢的浏览器（Chrome、Edge、Firefox等）
-
-## ✨ 网站功能
-
-### 首页功能：
-- 🔍 搜索功能：可以搜索工具名称和描述
-- 📱 响应式设计：手机和电脑都能正常浏览
-- 🎯 分类导航：AI写作、AI绘画、AI视频等分类
-- ⭐ 今日推荐：展示3个精选工具
-- 📊 工具列表：按类别展示多个AI工具
-
-### 详情页功能：
-- 📖 详细介绍
-- ✨ 核心功能列表
-- 💳 价格方案对比
-- 🚀 快速上手教程
-- ⚖️ 优缺点分析
-- 🔗 相关工具推荐
-
-## 📝 下一步可以做什么
-
-### 1. 内容扩展
-- 添加更多AI工具介绍页面
-- 每天更新1-3个新工具
-- 用AI生成更多内容
-
-### 2. 功能增强
-- 添加工具评分功能
-- 添加用户评论区
-- 添加收藏功能
-
-### 3. 上线发布
-- 购买域名和服务器（88元/年起）
-- 上传到服务器
-- 提交到搜索引擎收录
-
-### 4. SEO优化
-- 优化每个页面的标题和描述
-- 添加更多长尾关键词
-- 建立内链结构
-
-### 5. 变现准备
-- 申请Google AdSense
-- 寻找AI工具的推广联盟
-- 开发会员功能
-
-## 🎨 如何修改网站
-
-### 修改颜色主题：
-打开 style.css，找到：
-```css
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-```
-修改 #667eea 和 #764ba2 为你喜欢的颜色代码
-
-### 修改网站名称：
-在所有HTML文件中查找"AI工具导航"，替换为你的网站名称
-
-### 添加新工具：
-1. 复制 tool-chatgpt.html
-2. 重命名为 tool-新工具名.html
-3. 修改里面的内容
-4. 在 index.html 中添加链接
-
-## 💡 用AI自动生成内容
-
-你可以用DeepSeek或ChatGPT生成更多工具介绍：
-
-提示词：
-```
-请为以下AI工具生成一篇详细介绍：
-工具名：[工具名]
-包含：简介、功能、价格、使用教程、优缺点
-字数：800-1000字
-```
-
-## 📞 需要帮助？
-
-如果你需要：
-- 添加新功能
-- 修改样式
-- 上传到服务器
-- SEO优化
-- 自动化内容生成
-
-随时告诉我，我会帮你实现！
+[![Website](https://img.shields.io/badge/website-online-brightgreen)](https://xmtx645-droid.github.io/ai-tools-hub/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
-© 2024 | 完全由AI辅助创建
+## 📖 网站简介
+
+**AI工具导航**是一个精心策划的AI工具集合网站，致力于帮助用户发现和使用最优秀的人工智能工具。
+
+我们收录了：
+- ✍️ **AI写作工具** - ChatGPT、Notion AI、Jasper AI等
+- 🎨 **AI绘画工具** - Midjourney、Stable Diffusion、DALL-E 3等
+- 🎬 **AI视频工具** - Runway、剪映、Synthesia等
+- 📚 **场景分类** - 学生、设计师、职场人士、内容创作者专用工具推荐
+- 📖 **新手指南** - 从零开始学会使用AI工具
+
+---
+
+## ✨ 网站特色
+
+### 🎯 精准分类
+- 按功能分类（写作、绘画、视频）
+- 按人群分类（学生、设计师、职场、创作者）
+- 按价格筛选（免费、试用、付费）
+
+### 🔍 实用功能
+- 实时搜索功能
+- 价格筛选系统
+- 响应式设计（支持手机浏览）
+- 苹果风格UI设计
+
+### 📝 详细介绍
+- 每个工具都有详细介绍页
+- 包含功能说明、价格信息、使用场景
+- 提供官网直达链接
+
+### 🎓 新手友好
+- 完整的新手入门指南
+- 提示词技巧教学
+- 常见问题解答
+- 实用场景模板
+
+---
+
+## 🌐 在线访问
+
+**网站地址：** https://xmtx645-droid.github.io/ai-tools-hub/
+
+---
+
+## 📂 项目结构
+
+```
+ai-tools-hub/
+├── index.html                 # 首页
+├── style.css                  # 样式文件
+├── guide-beginner.html        # 新手指南
+├── scene-student.html         # 学生专用工具
+├── scene-designer.html        # 设计师专用工具
+├── scene-worker.html          # 职场人士专用工具
+├── scene-creator.html         # 内容创作者专用工具
+├── tool-*.html                # 各工具详情页（13个）
+├── sitemap.xml                # 网站地图
+└── robots.txt                 # 搜索引擎配置
+```
+
+---
+
+## 🛠️ 技术栈
+
+- **前端**: HTML5 + CSS3 + JavaScript
+- **设计**: 苹果风格（Apple Design）
+- **托管**: GitHub Pages
+- **统计**: 不蒜子访客统计
+- **SEO**: Google Search Console + Sitemap
+
+---
+
+## 📊 收录工具列表
+
+### AI对话/写作工具
+- ChatGPT - OpenAI强大的AI对话助手
+- DeepSeek - 国产强大AI模型
+- 文心一言 - 百度AI对话工具
+- Notion AI - 内置笔记中的AI助手
+- Jasper AI - 专业营销文案工具
+- Grammarly - AI英文写作助手
+
+### AI绘画工具
+- Midjourney - 顶级AI绘画工具
+- Stable Diffusion - 开源免费AI绘画
+- DALL-E 3 - OpenAI的AI绘画工具
+- Leonardo AI - 游戏美术专用
+- 文心一格 - 百度AI绘画
+
+### AI视频工具
+- Runway - 专业AI视频编辑
+- Pictory - 文字转视频工具
+- Synthesia - AI虚拟人视频
+- 剪映 - 免费短视频剪辑工具
+
+---
+
+## 🎯 适用人群
+
+- 🎓 **学生** - 学习辅导、作业帮助、论文写作
+- 🎨 **设计师** - 概念设计、素材生成、效率提升
+- 💼 **职场人士** - 邮件写作、报告总结、PPT制作
+- 📹 **内容创作者** - 文案创作、封面制作、视频剪辑
+
+---
+
+## 🚀 如何使用
+
+1. 访问网站：https://xmtx645-droid.github.io/ai-tools-hub/
+2. 浏览工具分类或使用搜索功能
+3. 点击感兴趣的工具查看详情
+4. 通过"访问官网"链接直达工具网站
+5. 查看新手指南学习使用技巧
+
+---
+
+## 📈 SEO优化
+
+- ✅ Google Search Console验证
+- ✅ Sitemap.xml提交
+- ✅ Robots.txt配置
+- ✅ Meta标签优化
+- ✅ Open Graph社交分享优化
+- ✅ 语义化HTML结构
+
+---
+
+## 📝 更新日志
+
+### 2024-01-15
+- ✨ 网站正式上线
+- ✨ 收录15款主流AI工具
+- ✨ 添加4个场景分类页
+- ✨ 完成新手指南
+- ✨ 添加价格筛选功能
+- ✨ 集成访客统计
+- ✨ SEO优化完成
+
+---
+
+## 🤝 贡献
+
+欢迎提交新的AI工具推荐或功能建议！
+
+如果你发现：
+- 新的优秀AI工具
+- 工具信息过期
+- 网站bug或问题
+- 功能改进建议
+
+请通过 [Issues](https://github.com/xmtx645-droid/ai-tools-hub/issues) 联系我们！
+
+---
+
+## 📧 联系方式
+
+- 网站：https://xmtx645-droid.github.io/ai-tools-hub/
+- 邮箱：contact@aitools.com
+- GitHub：https://github.com/xmtx645-droid/ai-tools-hub
+
+---
+
+## 📄 许可证
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+
+---
+
+## ⭐ 支持我们
+
+如果这个网站对你有帮助，请给我们一个 Star ⭐️
+
+感谢你的支持！🙏
+
+---
+
+<p align="center">
+  <strong>© 2024 AI工具导航 | 每日更新最新AI工具</strong><br>
+  让AI成为你的超能力 🚀
+</p>

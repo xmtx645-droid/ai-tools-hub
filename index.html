@@ -26,6 +26,8 @@
     <meta property="twitter:image" content="https://xmtx645-droid.github.io/ai-tools-hub/og-image.png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="share-style.css">
+    <link rel="stylesheet" href="comments-style.css">
 </head>
 <body>
     <!-- 顶部导航 -->
@@ -295,13 +297,113 @@
         </div>
     </section>
 
+    <!-- 社交分享区域 -->
+    <section class="share-section">
+        <div class="container">
+            <h2 class="share-title">📢 分享给更多人</h2>
+            <div class="share-buttons">
+                <button class="share-btn wechat" onclick="shareToWechat(); trackShare('wechat')">
+                    <span class="icon">💬</span> 微信分享
+                </button>
+                <button class="share-btn weibo" onclick="shareToWeibo(); trackShare('weibo')">
+                    <span class="icon">📱</span> 微博分享
+                </button>
+                <button class="share-btn qq" onclick="shareToQQ(); trackShare('qq')">
+                    <span class="icon">🐧</span> QQ分享
+                </button>
+                <button class="share-btn twitter" onclick="shareToTwitter(); trackShare('twitter')">
+                    <span class="icon">🐦</span> Twitter
+                </button>
+                <button class="share-btn facebook" onclick="shareToFacebook(); trackShare('facebook')">
+                    <span class="icon">👍</span> Facebook
+                </button>
+                <button class="share-btn copy" onclick="copyLink(); trackShare('copy')">
+                    <span class="icon">🔗</span> 复制链接
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 微信分享二维码弹窗 -->
+    <div id="wechatQrModal" class="wechat-qr-modal">
+        <div class="wechat-qr-content">
+            <h3>微信扫码分享</h3>
+            <div id="qrcode"></div>
+            <p>使用微信扫描二维码分享给好友</p>
+            <button class="wechat-qr-close" onclick="closeWechatQr()">关闭</button>
+        </div>
+    </div>
+
+    <!-- 评论区域 -->
+    <section class="comments-section">
+        <div class="comments-container">
+            <h2 class="comments-title">💬 留言讨论</h2>
+            <p class="comments-subtitle">分享你的使用体验，推荐好用的AI工具</p>
+
+            <div class="comments-tips">
+                <h4>💡 评论提示</h4>
+                <ul>
+                    <li>需要GitHub账号登录（免费注册）</li>
+                    <li>支持Markdown格式和表情😊</li>
+                    <li>分享你发现的新工具或使用技巧</li>
+                    <li>友善交流，共同进步</li>
+                </ul>
+            </div>
+
+            <!-- Giscus评论系统 -->
+            <script src="https://giscus.app/client.js"
+                    data-repo="xmtx645-droid/ai-tools-hub"
+                    data-repo-id="请替换为你的repo-id"
+                    data-category="General"
+                    data-category-id="请替换为你的category-id"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="light"
+                    data-lang="zh-CN"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 12px;">
+                <p style="color: #856404; margin: 0;">
+                    <strong>📝 评论系统配置说明：</strong><br>
+                    需要在GitHub仓库开启Discussions功能，然后访问
+                    <a href="https://giscus.app/zh-CN" target="_blank" style="color: #0071e3;">giscus.app</a>
+                    获取配置参数
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <p>© 2024 AI工具导航 | 每日更新最新AI工具</p>
             <p>联系方式：contact@aitools.com</p>
+            <p style="margin-top: 15px; color: #86868b; font-size: 14px;">
+                <span id="busuanzi_container_site_pv">
+                    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+                </span>
+                <span style="margin: 0 10px;">|</span>
+                <span id="busuanzi_container_site_uv">
+                    访客数 <span id="busuanzi_value_site_uv"></span> 人
+                </span>
+            </p>
         </div>
     </footer>
+
+    <!-- 不蒜子统计 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!-- 推广链接配置 -->
+    <script src="affiliate-links.js"></script>
+
+    <!-- 社交分享功能 -->
+    <script src="share.js"></script>
 
     <script>
         // 简单的搜索功能
@@ -342,6 +444,13 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        // 推广链接点击统计（可选）
+        function trackAffiliate(toolName) {
+            // 这里可以添加统计代码，记录哪个工具被点击了
+            console.log('用户点击了：' + toolName);
+            // 未来可以接入Google Analytics或其他统计工具
         }
 
         // 平滑滚动
