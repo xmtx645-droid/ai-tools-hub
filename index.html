@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="LnqOSb-PsqC20qBoWC_iNzbNXcjqKEa5f_pGSriFKjY" />
+    <title>AI工具导航 - 精选ChatGPT、Midjourney等最新AI工具 | 免费AI工具推荐</title>
+    <meta name="description" content="专业的AI工具导航网站，精选ChatGPT、Midjourney、Stable Diffusion等最新AI工具。涵盖AI写作、AI绘画、AI视频制作，每日更新，免费使用。适合学生、设计师、职场人士。">
+    <meta name="keywords" content="AI工具,ChatGPT,Midjourney,AI绘画,AI写作,AI视频,人工智能工具,免费AI,AI导航,Stable Diffusion,文心一言,DeepSeek">
+    <meta name="author" content="AI工具导航">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://xmtx645-droid.github.io/AI工具/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xmtx645-droid.github.io/AI工具/">
+    <meta property="og:title" content="AI工具导航 - 精选最新AI工具">
+    <meta property="og:description" content="专业的AI工具导航网站，精选ChatGPT、Midjourney等最新AI工具，免费使用">
+    <meta property="og:image" content="https://xmtx645-droid.github.io/AI工具/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xmtx645-droid.github.io/AI工具/">
+    <meta property="twitter:title" content="AI工具导航 - 精选最新AI工具">
+    <meta property="twitter:description" content="专业的AI工具导航网站，精选ChatGPT、Midjourney等最新AI工具">
+    <meta property="twitter:image" content="https://xmtx645-droid.github.io/AI工具/og-image.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🤖 AI工具导航</h1>
+                <p class="tagline">每日发现最新AI工具</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="active">首页</a>
+                <a href="#writing">AI写作</a>
+                <a href="#image">AI绘画</a>
+                <a href="#video">AI视频</a>
+                <a href="scene-student.html">场景分类</a>
+                <a href="guide-beginner.html">新手指南</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 搜索栏 -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索AI工具..." onkeyup="searchTools()">
+                <button onclick="searchTools()">🔍 搜索</button>
+            </div>
+
+            <!-- 价格筛选 -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByPrice('all')">全部</button>
+                <button class="filter-btn" onclick="filterByPrice('free')">💚 免费</button>
+                <button class="filter-btn" onclick="filterByPrice('trial')">🎁 试用</button>
+                <button class="filter-btn" onclick="filterByPrice('paid')">💎 付费</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 今日推荐 -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">⭐ 今日推荐</h2>
+            <div class="featured-grid">
+                <div class="tool-card featured" data-price="trial">
+                    <div class="tool-badge">热门</div>
+                    <h3>ChatGPT</h3>
+                    <p class="tool-desc">最强大的AI对话助手，支持写作、编程、翻译等多种任务</p>
+                    <div class="tool-tags">
+                        <span class="tag">AI对话</span>
+                        <span class="tag">写作</span>
+                        <span class="tag">编程</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费试用</span>
+                        <a href="tool-chatgpt.html" class="btn-primary">查看详情</a>
+                    </div>
+                </div>
+
+                <div class="tool-card featured" data-price="paid">
+                    <div class="tool-badge">推荐</div>
+                    <h3>Midjourney</h3>
+                    <p class="tool-desc">顶级AI绘画工具，输入文字即可生成精美艺术作品</p>
+                    <div class="tool-tags">
+                        <span class="tag">AI绘画</span>
+                        <span class="tag">艺术创作</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$10/月起</span>
+                        <a href="tool-midjourney.html" class="btn-primary">查看详情</a>
+                    </div>
+                </div>
+
+                <div class="tool-card featured" data-price="free">
+                    <div class="tool-badge">新品</div>
+                    <h3>DeepSeek</h3>
+                    <p class="tool-desc">国产强大AI模型，性价比极高，适合开发者使用</p>
+                    <div class="tool-tags">
+                        <span class="tag">AI对话</span>
+                        <span class="tag">国产</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">超低价</span>
+                        <a href="tool-deepseek.html" class="btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI写作工具 -->
+    <section class="tools-section" id="writing">
+        <div class="container">
+            <h2 class="section-title">✍️ AI写作工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-price="paid">
+                    <h3>Notion AI</h3>
+                    <p class="tool-desc">内置在Notion中的AI助手，帮助写作、总结、翻译</p>
+                    <div class="tool-tags">
+                        <span class="tag">写作</span>
+                        <span class="tag">笔记</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$10/月</span>
+                        <a href="tool-notion-ai.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="paid">
+                    <h3>Jasper AI</h3>
+                    <p class="tool-desc">专业营销文案AI工具，适合电商、广告文案创作</p>
+                    <div class="tool-tags">
+                        <span class="tag">营销</span>
+                        <span class="tag">文案</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$49/月起</span>
+                        <a href="tool-jasper-ai.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="free">
+                    <h3>文心一言</h3>
+                    <p class="tool-desc">百度出品的AI对话工具，中文理解能力强</p>
+                    <div class="tool-tags">
+                        <span class="tag">对话</span>
+                        <span class="tag">国产</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="tool-wenxin.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="trial">
+                    <h3>Grammarly</h3>
+                    <p class="tool-desc">AI英文写作助手，语法检查和优化建议</p>
+                    <div class="tool-tags">
+                        <span class="tag">英文</span>
+                        <span class="tag">语法</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费+付费</span>
+                        <a href="tool-grammarly.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI绘画工具 -->
+    <section class="tools-section" id="image">
+        <div class="container">
+            <h2 class="section-title">🎨 AI绘画工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-price="free">
+                    <h3>Stable Diffusion</h3>
+                    <p class="tool-desc">开源AI绘画模型，可本地部署，完全免费</p>
+                    <div class="tool-tags">
+                        <span class="tag">开源</span>
+                        <span class="tag">免费</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="tool-stable-diffusion.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="paid">
+                    <h3>DALL-E 3</h3>
+                    <p class="tool-desc">OpenAI推出的AI绘画工具，图片质量极高</p>
+                    <div class="tool-tags">
+                        <span class="tag">高质量</span>
+                        <span class="tag">创意</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">ChatGPT Plus</span>
+                        <a href="tool-dalle3.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="trial">
+                    <h3>Leonardo AI</h3>
+                    <p class="tool-desc">游戏美术和插画专用AI工具，风格多样</p>
+                    <div class="tool-tags">
+                        <span class="tag">游戏</span>
+                        <span class="tag">插画</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费额度</span>
+                        <a href="tool-leonardo.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="free">
+                    <h3>文心一格</h3>
+                    <p class="tool-desc">百度的AI绘画工具，中文提示词支持好</p>
+                    <div class="tool-tags">
+                        <span class="tag">国产</span>
+                        <span class="tag">中文</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="tool-wenxinyige.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI视频工具 -->
+    <section class="tools-section" id="video">
+        <div class="container">
+            <h2 class="section-title">🎬 AI视频工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-price="trial">
+                    <h3>Runway</h3>
+                    <p class="tool-desc">专业AI视频编辑工具，支持视频生成和特效</p>
+                    <div class="tool-tags">
+                        <span class="tag">视频编辑</span>
+                        <span class="tag">特效</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$12/月起</span>
+                        <a href="tool-runway.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="paid">
+                    <h3>Pictory</h3>
+                    <p class="tool-desc">文字转视频工具，自动配图配音</p>
+                    <div class="tool-tags">
+                        <span class="tag">文字转视频</span>
+                        <span class="tag">自动化</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$19/月起</span>
+                        <a href="tool-pictory.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="paid">
+                    <h3>Synthesia</h3>
+                    <p class="tool-desc">AI虚拟人视频制作，无需真人出镜</p>
+                    <div class="tool-tags">
+                        <span class="tag">虚拟人</span>
+                        <span class="tag">商业</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">$30/月起</span>
+                        <a href="tool-synthesia.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="tool-card" data-price="free">
+                    <h3>剪映</h3>
+                    <p class="tool-desc">抖音官方剪辑工具，内置多种AI功能</p>
+                    <div class="tool-tags">
+                        <span class="tag">剪辑</span>
+                        <span class="tag">国产</span>
+                    </div>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="tool-jianying.html" class="btn-secondary">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 AI工具导航 | 每日更新最新AI工具</p>
+            <p>联系方式：contact@aitools.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的搜索功能
+        function searchTools() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('.tool-desc').textContent.toLowerCase();
+
+                if (title.includes(input) || desc.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = input === '' ? 'block' : 'none';
+                }
+            });
+        }
+
+        // 价格筛选功能
+        function filterByPrice(priceType) {
+            const cards = document.querySelectorAll('.tool-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 更新按钮状态
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // 筛选卡片
+            cards.forEach(card => {
+                const cardPrice = card.getAttribute('data-price');
+
+                if (priceType === 'all') {
+                    card.style.display = 'block';
+                } else if (cardPrice === priceType) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

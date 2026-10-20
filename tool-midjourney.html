@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midjourney - AI绘画工具 | AI工具导航</title>
+    <meta name="description" content="Midjourney是顶级AI绘画工具，输入文字即可生成精美艺术作品">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tool-detail {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .tool-header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .tool-header h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .tool-header .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .tool-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        .meta-item strong {
+            color: #667eea;
+        }
+        .tool-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .section p {
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .features-list li strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .pricing-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        .pricing-card.recommended {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .pricing-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #667eea;
+        }
+        .pricing-card.recommended .price {
+            color: white;
+        }
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .pricing-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .pricing-card.recommended ul li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            position: relative;
+            padding-left: 80px;
+        }
+        .steps-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .pros, .cons {
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .pros {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+        .cons {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+        .pros h3, .cons h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pros ul li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .cons ul li:before {
+            content: "✗ ";
+            color: #dc3545;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+        .cta-section h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #f5576c;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .related-tools {
+            margin: 40px 0;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .example-prompts {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .example-prompts h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        .prompt-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+        }
+        .prompt-item strong {
+            color: #856404;
+        }
+        @media (max-width: 768px) {
+            .tool-detail {
+                padding: 20px;
+            }
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🤖 AI工具导航</h1>
+                <p class="tagline">每日发现最新AI工具</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">首页</a>
+                <a href="index.html#writing">AI写作</a>
+                <a href="index.html#image">AI绘画</a>
+                <a href="index.html#video">AI视频</a>
+                <a href="index.html#office">AI办公</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tool-detail">
+            <div class="tool-header">
+                <h1>Midjourney</h1>
+                <p class="subtitle">顶级AI绘画工具，让艺术创作触手可及</p>
+                <div class="tool-meta">
+                    <div class="meta-item">
+                        <span>🏢 开发商：</span>
+                        <strong>Midjourney Inc.</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span>💰 价格：</span>
+                        <strong>$10/月起</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span>🌍 语言：</span>
+                        <strong>支持中英文</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span>📱 平台：</span>
+                        <strong>Discord + 网页</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-image">
+                🎨 Midjourney
+            </div>
+
+            <div class="section">
+                <h2>📖 工具简介</h2>
+                <p>
+                    Midjourney是目前全球最受欢迎的AI绘画工具之一，以其独特的艺术风格和惊人的图像质量闻名。只需输入文字描述，Midjourney就能在几十秒内生成令人惊叹的艺术作品。
+                </p>
+                <p>
+                    与其他AI绘画工具相比，Midjourney在艺术性、细节处理和色彩运用上都表现出色，特别适合创作概念艺术、插画、设计稿等。许多专业设计师、艺术家和内容创作者都将Midjourney作为创作灵感的重要来源。
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>✨ 核心功能</h2>
+                <ul class="features-list">
+                    <li>
+                        <strong>文字生成图片</strong>
+                        输入描述性文字（提示词），AI自动生成对应的图像。支持各种艺术风格，从写实到抽象。
+                    </li>
+                    <li>
+                        <strong>图片变体生成</strong>
+                        对已生成的图片进行微调，生成不同版本。可以探索多种可能性。
+                    </li>
+                    <li>
+                        <strong>图片放大增强</strong>
+                        将选中的图片放大到更高分辨率，增强细节质量，适合打印和商用。
+                    </li>
+                    <li>
+                        <strong>风格参考</strong>
+                        上传参考图片，让AI模仿特定的艺术风格或构图。
+                    </li>
+                    <li>
+                        <strong>混合图像</strong>
+                        将多张图片混合，创造出独特的视觉效果。
+                    </li>
+                    <li>
+                        <strong>参数调节</strong>
+                        通过参数控制图片比例、风格化程度、随机性等，精确控制输出效果。
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>💡 提示词技巧</h2>
+                <div class="example-prompts">
+                    <h3>📝 优质提示词示例</h3>
+                    <div class="prompt-item">
+                        <strong>人物肖像：</strong>
+                        "a portrait of a young woman with red hair, blue eyes, wearing a white dress, soft lighting, detailed face, cinematic, 8k"
+                    </div>
+                    <div class="prompt-item">
+                        <strong>场景设计：</strong>
+                        "futuristic cyberpunk city at night, neon lights, rain, detailed architecture, wide angle, cinematic composition"
+                    </div>
+                    <div class="prompt-item">
+                        <strong>产品设计：</strong>
+                        "modern minimalist chair design, wooden material, studio lighting, white background, product photography"
+                    </div>
+                    <div class="prompt-item">
+                        <strong>中文示例：</strong>
+                        "中国古代山水画风格，高山流水，云雾缭绕，水墨画，细节丰富 --ar 16:9 --v 6"
+                    </div>
+                </div>
+                <p style="margin-top:15px;">
+                    <strong>提示词构成建议：</strong>主体 + 细节 + 风格 + 参数。越具体的描述，生成的图片越接近预期。
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>💳 价格方案</h2>
+                <div class="pricing-table">
+                    <div class="pricing-card">
+                        <h3>Basic 基础版</h3>
+                        <div class="price">$10<span style="font-size:14px">/月</span></div>
+                        <ul>
+                            <li>✓ 200张图片/月</li>
+                            <li>✓ 快速生成模式</li>
+                            <li>✓ 个人商用授权</li>
+                            <li>✓ 社区画廊可见</li>
+                            <li>✗ 无松弛模式</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card recommended">
+                        <h3>Standard 标准版</h3>
+                        <div class="price">$30<span style="font-size:14px">/月</span></div>
+                        <ul>
+                            <li>✓ 无限松弛模式</li>
+                            <li>✓ 15小时快速模式</li>
+                            <li>✓ 商用授权</li>
+                            <li>✓ 隐私模式可选</li>
+                            <li>✓ 优先客服</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Pro 专业版</h3>
+                        <div class="price">$60<span style="font-size:14px">/月</span></div>
+                        <ul>
+                            <li>✓ 无限松弛模式</li>
+                            <li>✓ 30小时快速模式</li>
+                            <li>✓ 完整商用授权</li>
+                            <li>✓ 隐私模式</li>
+                            <li>✓ 最高优先级</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Mega 超级版</h3>
+                        <div class="price">$120<span style="font-size:14px">/月</span></div>
+                        <ul>
+                            <li>✓ 无限松弛模式</li>
+                            <li>✓ 60小时快速模式</li>
+                            <li>✓ 企业商用授权</li>
+                            <li>✓ 全功能隐私</li>
+                            <li>✓ 专属客服</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align:center; color:#666; margin-top:15px;">
+                    💡 快速模式：1分钟生成 | 松弛模式：10分钟生成（不限量）
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>🚀 快速上手</h2>
+                <ol class="steps-list">
+                    <li>
+                        <strong>注册Discord账号</strong><br>
+                        Midjourney目前通过Discord运行，需要先注册Discord账号
+                    </li>
+                    <li>
+                        <strong>访问Midjourney官网</strong><br>
+                        进入midjourney.com，点击"Join the Beta"加入Discord服务器
+                    </li>
+                    <li>
+                        <strong>选择订阅计划</strong><br>
+                        在Discord中输入 /subscribe 命令，选择适合的付费计划
+                    </li>
+                    <li>
+                        <strong>开始创作</strong><br>
+                        在任意频道输入 /imagine prompt: [你的描述]，等待生成
+                    </li>
+                    <li>
+                        <strong>选择和放大</strong><br>
+                        生成4张图片后，可以选择U（放大）或V（变体）进行进一步创作
+                    </li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>⚖️ 优缺点分析</h2>
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h3>✓ 优点</h3>
+                        <ul>
+                            <li>图片质量极高，艺术性强</li>
+                            <li>独特的美学风格</li>
+                            <li>生成速度快</li>
+                            <li>社区活跃，灵感丰富</li>
+                            <li>持续更新，功能增强</li>
+                            <li>商用授权明确</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h3>✗ 缺点</h3>
+                        <ul>
+                            <li>没有免费版（只能试用25张）</li>
+                            <li>需要通过Discord使用</li>
+                            <li>对文字渲染效果一般</li>
+                            <li>中文提示词支持较弱</li>
+                            <li>生成结果有随机性</li>
+                            <li>价格相对较高</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 适用场景</h2>
+                <ul class="features-list">
+                    <li>
+                        <strong>设计师</strong>
+                        创作概念设计、视觉参考、情绪板
+                    </li>
+                    <li>
+                        <strong>内容创作者</strong>
+                        制作社交媒体配图、封面图、插画
+                    </li>
+                    <li>
+                        <strong>自媒体运营</strong>
+                        生成文章配图、视频封面、品牌素材
+                    </li>
+                    <li>
+                        <strong>游戏开发</strong>
+                        角色设计、场景概念、道具参考
+                    </li>
+                    <li>
+                        <strong>艺术创作</strong>
+                        探索艺术灵感、风格实验、作品创作
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <h2>开启你的AI艺术之旅</h2>
+                <p style="margin-bottom:30px;">加入全球数百万创作者，用AI释放创意潜能</p>
+                <a href="https://www.midjourney.com" target="_blank" class="cta-button">访问官网 →</a>
+            </div>
+
+            <div class="section related-tools">
+                <h2>🔗 相关工具推荐</h2>
+                <div class="related-grid">
+                    <div class="tool-card">
+                        <h3>Stable Diffusion</h3>
+                        <p class="tool-desc">开源免费的AI绘画工具</p>
+                        <a href="#" class="btn-secondary">查看详情</a>
+                    </div>
+                    <div class="tool-card">
+                        <h3>DALL-E 3</h3>
+                        <p class="tool-desc">OpenAI的AI绘画工具</p>
+                        <a href="#" class="btn-secondary">查看详情</a>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Leonardo AI</h3>
+                        <p class="tool-desc">游戏美术专用AI工具</p>
+                        <a href="#" class="btn-secondary">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 AI工具导航 | 每日更新最新AI工具</p>
+            <p>联系方式：contact@aitools.com</p>
+        </div>
+    </footer>
+</body>
+</html>
