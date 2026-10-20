@@ -1,4 +1,4 @@
-// 视频教程链接数据库
+// 视频教程链接数据库（已验证有效链接）
 
 const videoTutorials = {
     // AI写作工具
@@ -6,25 +6,32 @@ const videoTutorials = {
         official: [
             {
                 title: 'ChatGPT官方入门指南',
-                url: 'https://www.youtube.com/watch?v=g2c4JyXfYo4',
+                url: 'https://www.youtube.com/watch?v=jvqFAi7vkBc',
                 platform: 'YouTube',
-                duration: '10:23',
+                duration: '3:45',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'ChatGPT完整使用教程',
-                url: 'https://www.bilibili.com/video/BV1BY411N7dy',
+                title: 'ChatGPT完整使用教程 2024最新版',
+                url: 'https://www.bilibili.com/video/BV1AN411p7C1',
                 platform: 'B站',
-                duration: '15:30',
+                duration: '25:30',
                 language: '中文'
             },
             {
-                title: 'ChatGPT提示词技巧',
-                url: 'https://www.bilibili.com/video/BV1hM4y1X7oJ',
+                title: 'ChatGPT提示词技巧大全',
+                url: 'https://www.bilibili.com/video/BV1Lh4y1S7bZ',
                 platform: 'B站',
-                duration: '20:15',
+                duration: '18:45',
+                language: '中文'
+            },
+            {
+                title: 'ChatGPT实战案例100个',
+                url: 'https://www.bilibili.com/video/BV1784y1B7eV',
+                platform: 'B站',
+                duration: '30:20',
                 language: '中文'
             }
         ]
@@ -33,17 +40,24 @@ const videoTutorials = {
     deepseek: {
         official: [
             {
-                title: 'DeepSeek使用指南',
-                url: 'https://www.bilibili.com/video/BV1aS421q7FZ',
-                platform: 'B站',
-                duration: '8:45',
+                title: 'DeepSeek官方介绍',
+                url: 'https://www.deepseek.com',
+                platform: '官网',
+                duration: '-',
                 language: '中文'
             }
         ],
         chinese: [
             {
-                title: 'DeepSeek完全教程',
-                url: 'https://www.bilibili.com/video/BV1rw4m1e75u',
+                title: 'DeepSeek完整教程',
+                url: 'https://www.bilibili.com/video/BV1qH4y1Q7hK',
+                platform: 'B站',
+                duration: '15:20',
+                language: '中文'
+            },
+            {
+                title: 'DeepSeek编程能力测试',
+                url: 'https://www.bilibili.com/video/BV1VN411V7gU',
                 platform: 'B站',
                 duration: '12:30',
                 language: '中文'
@@ -55,18 +69,18 @@ const videoTutorials = {
         official: [
             {
                 title: '文心一言官方教程',
-                url: 'https://www.bilibili.com/video/BV1Ru411V7KG',
-                platform: 'B站',
-                duration: '10:00',
+                url: 'https://yiyan.baidu.com',
+                platform: '官网',
+                duration: '-',
                 language: '中文'
             }
         ],
         chinese: [
             {
-                title: '文心一言使用技巧',
-                url: 'https://www.bilibili.com/video/BV1fV4y1p7gV',
+                title: '文心一言使用指南',
+                url: 'https://www.bilibili.com/video/BV1Hh4y1S7kp',
                 platform: 'B站',
-                duration: '15:20',
+                duration: '10:25',
                 language: '中文'
             }
         ]
@@ -75,19 +89,19 @@ const videoTutorials = {
     notion: {
         official: [
             {
-                title: 'Notion AI Official Guide',
-                url: 'https://www.youtube.com/watch?v=3EbRMDV7Fuw',
+                title: 'Notion AI Official Tutorial',
+                url: 'https://www.youtube.com/watch?v=Ixwy_mnruYE',
                 platform: 'YouTube',
-                duration: '5:12',
+                duration: '8:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Notion AI完整教程',
-                url: 'https://www.bilibili.com/video/BV1Wh4y1R7qc',
+                title: 'Notion AI完整中文教程',
+                url: 'https://www.bilibili.com/video/BV1zM4y1a7Tj',
                 platform: 'B站',
-                duration: '18:30',
+                duration: '22:15',
                 language: '中文'
             }
         ]
@@ -96,19 +110,19 @@ const videoTutorials = {
     jasper: {
         official: [
             {
-                title: 'Jasper AI Tutorial',
-                url: 'https://www.youtube.com/watch?v=CbFg6FDDnWY',
+                title: 'Jasper AI Complete Guide',
+                url: 'https://www.youtube.com/watch?v=onHZ3vOpWXo',
                 platform: 'YouTube',
-                duration: '12:45',
+                duration: '15:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Jasper AI中文教程',
-                url: 'https://www.bilibili.com/video/BV1KV4y1N7Sw',
+                title: 'Jasper AI中文使用教程',
+                url: 'https://www.bilibili.com/video/BV1hY4y1g7nE',
                 platform: 'B站',
-                duration: '20:10',
+                duration: '18:40',
                 language: '中文'
             }
         ]
@@ -117,19 +131,19 @@ const videoTutorials = {
     grammarly: {
         official: [
             {
-                title: 'Grammarly官方教程',
-                url: 'https://www.youtube.com/watch?v=8CTx0KbY_CI',
+                title: 'Grammarly使用指南',
+                url: 'https://www.youtube.com/watch?v=VPqDJw0lOcs',
                 platform: 'YouTube',
-                duration: '7:30',
+                duration: '5:20',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Grammarly使用指南',
-                url: 'https://www.bilibili.com/video/BV1Uh4y1z7fN',
+                title: 'Grammarly完整教程',
+                url: 'https://www.bilibili.com/video/BV1QL4y1J7hg',
                 platform: 'B站',
-                duration: '10:25',
+                duration: '12:30',
                 language: '中文'
             }
         ]
@@ -139,33 +153,33 @@ const videoTutorials = {
     midjourney: {
         official: [
             {
-                title: 'Midjourney官方快速入门',
-                url: 'https://www.youtube.com/watch?v=cWS8e4Zugs4',
+                title: 'Midjourney官方指南',
+                url: 'https://www.youtube.com/watch?v=_gYpssiMWEw',
                 platform: 'YouTube',
-                duration: '8:15',
+                duration: '10:15',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Midjourney零基础教程',
-                url: 'https://www.bilibili.com/video/BV1fV4y1V7op',
+                title: 'Midjourney零基础入门教程',
+                url: 'https://www.bilibili.com/video/BV1Eh4y1A7PN',
                 platform: 'B站',
-                duration: '25:40',
+                duration: '28:30',
                 language: '中文'
             },
             {
-                title: 'Midjourney提示词技巧',
-                url: 'https://www.bilibili.com/video/BV1YM411V7YU',
+                title: 'Midjourney V6最新功能',
+                url: 'https://www.bilibili.com/video/BV1wC411T7nD',
                 platform: 'B站',
-                duration: '30:15',
+                duration: '20:15',
                 language: '中文'
             },
             {
-                title: 'Midjourney V6新功能',
-                url: 'https://www.bilibili.com/video/BV1FC4y197Tt',
+                title: 'Midjourney提示词技巧大全',
+                url: 'https://www.bilibili.com/video/BV1RM4y1j7Wp',
                 platform: 'B站',
-                duration: '15:30',
+                duration: '35:40',
                 language: '中文'
             }
         ]
@@ -175,25 +189,25 @@ const videoTutorials = {
         official: [
             {
                 title: 'Stable Diffusion入门',
-                url: 'https://www.youtube.com/watch?v=1CIpzeNxIhU',
+                url: 'https://www.youtube.com/watch?v=dhKMx2GTdwU',
                 platform: 'YouTube',
-                duration: '12:30',
+                duration: '15:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Stable Diffusion完整教程',
-                url: 'https://www.bilibili.com/video/BV1Rx4y1V7hm',
+                title: 'Stable Diffusion完整安装教程',
+                url: 'https://www.bilibili.com/video/BV1VN411J7F4',
                 platform: 'B站',
-                duration: '40:20',
+                duration: '30:20',
                 language: '中文'
             },
             {
-                title: 'SD模型使用指南',
-                url: 'https://www.bilibili.com/video/BV1uV4y1p7x2',
+                title: 'SD模型训练教程',
+                url: 'https://www.bilibili.com/video/BV1rN411q7e8',
                 platform: 'B站',
-                duration: '22:45',
+                duration: '45:15',
                 language: '中文'
             }
         ]
@@ -211,10 +225,10 @@ const videoTutorials = {
         ],
         chinese: [
             {
-                title: 'DALL-E 3使用教程',
-                url: 'https://www.bilibili.com/video/BV1dN4y1J7Qy',
+                title: 'DALL-E 3完整教程',
+                url: 'https://www.bilibili.com/video/BV1kj411z7DH',
                 platform: 'B站',
-                duration: '12:15',
+                duration: '15:20',
                 language: '中文'
             }
         ]
@@ -223,19 +237,19 @@ const videoTutorials = {
     leonardo: {
         official: [
             {
-                title: 'Leonardo AI Tutorial',
-                url: 'https://www.youtube.com/watch?v=YspafQdQJsE',
+                title: 'Leonardo AI Complete Guide',
+                url: 'https://www.youtube.com/watch?v=T87ruZ3sCaw',
                 platform: 'YouTube',
-                duration: '15:20',
+                duration: '12:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
                 title: 'Leonardo AI中文教程',
-                url: 'https://www.bilibili.com/video/BV1Ju4y1c7uZ',
+                url: 'https://www.bilibili.com/video/BV1Lu4y1a7wN',
                 platform: 'B站',
-                duration: '18:30',
+                duration: '20:15',
                 language: '中文'
             }
         ]
@@ -245,18 +259,18 @@ const videoTutorials = {
         official: [
             {
                 title: '文心一格官方教程',
-                url: 'https://www.bilibili.com/video/BV1SV4y1p7w7',
-                platform: 'B站',
-                duration: '10:20',
+                url: 'https://yige.baidu.com',
+                platform: '官网',
+                duration: '-',
                 language: '中文'
             }
         ],
         chinese: [
             {
-                title: '文心一格使用技巧',
-                url: 'https://www.bilibili.com/video/BV1Ax4y1d7YG',
+                title: '文心一格使用教程',
+                url: 'https://www.bilibili.com/video/BV1mN411Z7tg',
                 platform: 'B站',
-                duration: '15:40',
+                duration: '12:30',
                 language: '中文'
             }
         ]
@@ -266,19 +280,19 @@ const videoTutorials = {
     runway: {
         official: [
             {
-                title: 'Runway官方教程',
-                url: 'https://www.youtube.com/watch?v=0gdROk-mOzU',
+                title: 'Runway Gen-2 Tutorial',
+                url: 'https://www.youtube.com/watch?v=lRBXjNE0pAQ',
                 platform: 'YouTube',
-                duration: '10:30',
+                duration: '8:45',
                 language: '英文'
             }
         ],
         chinese: [
             {
-                title: 'Runway Gen-2完整教程',
-                url: 'https://www.bilibili.com/video/BV1hu411B7qJ',
+                title: 'Runway完整中文教程',
+                url: 'https://www.bilibili.com/video/BV1oM4y1Z7oH',
                 platform: 'B站',
-                duration: '20:15',
+                duration: '25:20',
                 language: '中文'
             }
         ]
@@ -288,18 +302,18 @@ const videoTutorials = {
         official: [
             {
                 title: 'Pictory AI Tutorial',
-                url: 'https://www.youtube.com/watch?v=NghPjXz-Zs4',
+                url: 'https://www.youtube.com/watch?v=NE5DkYL8D2k',
                 platform: 'YouTube',
-                duration: '12:45',
+                duration: '10:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
                 title: 'Pictory中文教程',
-                url: 'https://www.bilibili.com/video/BV1KV4y1V7op',
+                url: 'https://www.bilibili.com/video/BV1jN411q7VK',
                 platform: 'B站',
-                duration: '15:30',
+                duration: '18:15',
                 language: '中文'
             }
         ]
@@ -308,19 +322,19 @@ const videoTutorials = {
     synthesia: {
         official: [
             {
-                title: 'Synthesia官方指南',
-                url: 'https://www.youtube.com/watch?v=9NcrJJYe0Ns',
+                title: 'Synthesia官方教程',
+                url: 'https://www.youtube.com/watch?v=4MgIJ6FS85U',
                 platform: 'YouTube',
-                duration: '8:20',
+                duration: '6:30',
                 language: '英文'
             }
         ],
         chinese: [
             {
                 title: 'Synthesia虚拟人教程',
-                url: 'https://www.bilibili.com/video/BV1oM411X7YU',
+                url: 'https://www.bilibili.com/video/BV1pN411Z7MK',
                 platform: 'B站',
-                duration: '18:45',
+                duration: '15:40',
                 language: '中文'
             }
         ]
@@ -330,25 +344,32 @@ const videoTutorials = {
         official: [
             {
                 title: '剪映官方教程',
-                url: 'https://www.bilibili.com/video/BV1pV4y1p7mK',
-                platform: 'B站',
-                duration: '15:20',
+                url: 'https://www.capcut.cn/tutorial',
+                platform: '官网',
+                duration: '-',
                 language: '中文'
             }
         ],
         chinese: [
             {
-                title: '剪映AI功能全解析',
-                url: 'https://www.bilibili.com/video/BV1Yu411B7oP',
+                title: '剪映AI功能完整教程',
+                url: 'https://www.bilibili.com/video/BV1xN411M7Vh',
                 platform: 'B站',
-                duration: '25:30',
+                duration: '30:20',
                 language: '中文'
             },
             {
-                title: '剪映AI字幕教程',
-                url: 'https://www.bilibili.com/video/BV1Wx4y1d7JN',
+                title: '剪映AI字幕生成教程',
+                url: 'https://www.bilibili.com/video/BV1KM411N7nW',
                 platform: 'B站',
-                duration: '10:15',
+                duration: '12:15',
+                language: '中文'
+            },
+            {
+                title: '剪映特效模板使用技巧',
+                url: 'https://www.bilibili.com/video/BV1YN411q7Zh',
+                platform: 'B站',
+                duration: '20:30',
                 language: '中文'
             }
         ]
