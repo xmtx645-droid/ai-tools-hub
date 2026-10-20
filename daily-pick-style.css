@@ -1,0 +1,252 @@
+/* 每日推荐样式 */
+.daily-pick-section {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 60px 0;
+    margin: 60px 0;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-pick-section::before {
+    content: '⭐';
+    position: absolute;
+    font-size: 150px;
+    opacity: 0.15;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.15; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.25; transform: translateY(-50%) scale(1.1); }
+}
+
+.daily-pick-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.daily-pick-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.daily-pick-date {
+    font-size: 14px;
+    color: #d35400;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.daily-pick-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.daily-pick-subtitle {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.daily-pick-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.daily-pick-visual {
+    text-align: center;
+}
+
+.daily-pick-icon {
+    font-size: 120px;
+    margin-bottom: 20px;
+    display: block;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.daily-pick-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.daily-pick-content h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.daily-pick-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.daily-pick-features {
+    margin: 25px 0;
+}
+
+.daily-pick-features h4 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.feature-list {
+    display: grid;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #555;
+}
+
+.feature-item .icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.daily-pick-price {
+    background: #fff3cd;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #856404;
+    font-weight: 600;
+}
+
+.price-value {
+    font-size: 24px;
+    color: #d35400;
+    font-weight: 700;
+}
+
+.daily-pick-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.daily-pick-btn {
+    flex: 1;
+    padding: 16px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+}
+
+.daily-pick-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.daily-pick-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.daily-pick-btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.daily-pick-btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.daily-pick-reason {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e8f4f8;
+    border-left: 4px solid #3498db;
+    border-radius: 8px;
+}
+
+.daily-pick-reason h4 {
+    color: #2980b9;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.daily-pick-reason p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 深色模式 */
+[data-theme="dark"] .daily-pick-card {
+    background: #1d1d1f;
+}
+
+[data-theme="dark"] .daily-pick-content h2,
+[data-theme="dark"] .daily-pick-features h4 {
+    color: #f5f5f7;
+}
+
+[data-theme="dark"] .daily-pick-description,
+[data-theme="dark"] .feature-item {
+    color: #a1a1a6;
+}
+
+/* 响应式 */
+@media (max-width: 968px) {
+    .daily-pick-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .daily-pick-icon {
+        font-size: 80px;
+    }
+
+    .daily-pick-content h2 {
+        font-size: 26px;
+    }
+
+    .daily-pick-actions {
+        flex-direction: column;
+    }
+}

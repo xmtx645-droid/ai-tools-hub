@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="share-style.css">
     <link rel="stylesheet" href="comments-style.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="newsletter-style.css">
+    <link rel="stylesheet" href="coupon-style.css">
+    <link rel="stylesheet" href="daily-pick-style.css">
+    <link rel="stylesheet" href="advanced-filter-style.css">
 </head>
 <body>
     <!-- 顶部导航 -->
@@ -62,6 +67,120 @@
                 <button class="filter-btn" onclick="filterByPrice('free')">💚 免费</button>
                 <button class="filter-btn" onclick="filterByPrice('trial')">🎁 试用</button>
                 <button class="filter-btn" onclick="filterByPrice('paid')">💎 付费</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 每日推荐 -->
+    <section class="daily-pick-section">
+        <div class="container" id="dailyPickContent">
+            <!-- 内容由JavaScript动态生成 -->
+        </div>
+    </section>
+
+    <!-- 高级筛选器 -->
+    <section class="container" style="margin-top: 40px;">
+        <div class="advanced-filter">
+            <div class="filter-header">
+                <h3 class="filter-title">🎯 高级筛选</h3>
+                <button class="filter-reset" onclick="resetFilters()">🔄 重置筛选</button>
+            </div>
+
+            <div class="filter-groups">
+                <!-- 分类筛选 -->
+                <div class="filter-group">
+                    <div class="filter-group-title">
+                        <span class="icon">📂</span> 工具分类
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-writing" class="filter-checkbox" onchange="toggleFilter('category', 'writing')">
+                            <label for="cat-writing" class="filter-label">✍️ AI写作</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-image" class="filter-checkbox" onchange="toggleFilter('category', 'image')">
+                            <label for="cat-image" class="filter-label">🎨 AI绘画</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-video" class="filter-checkbox" onchange="toggleFilter('category', 'video')">
+                            <label for="cat-video" class="filter-label">🎬 AI视频</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 价格筛选 -->
+                <div class="filter-group">
+                    <div class="filter-group-title">
+                        <span class="icon">💰</span> 价格类型
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-free" class="filter-checkbox" onchange="toggleFilter('price', 'free')">
+                            <label for="price-free" class="filter-label">💚 完全免费</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-freemium" class="filter-checkbox" onchange="toggleFilter('price', 'freemium')">
+                            <label for="price-freemium" class="filter-label">🎁 免费试用</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-paid" class="filter-checkbox" onchange="toggleFilter('price', 'paid')">
+                            <label for="price-paid" class="filter-label">💎 付费订阅</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 平台筛选 -->
+                <div class="filter-group">
+                    <div class="filter-group-title">
+                        <span class="icon">💻</span> 平台支持
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="platform-web" class="filter-checkbox" onchange="toggleFilter('platform', 'web')">
+                            <label for="platform-web" class="filter-label">🌐 网页版</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="platform-app" class="filter-checkbox" onchange="toggleFilter('platform', 'app')">
+                            <label for="platform-app" class="filter-label">📱 移动App</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="platform-desktop" class="filter-checkbox" onchange="toggleFilter('platform', 'desktop')">
+                            <label for="platform-desktop" class="filter-label">🖥️ 桌面软件</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 语言筛选 -->
+                <div class="filter-group">
+                    <div class="filter-group-title">
+                        <span class="icon">🌍</span> 语言支持
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="lang-chinese" class="filter-checkbox" onchange="toggleFilter('language', 'chinese')">
+                            <label for="lang-chinese" class="filter-label">🇨🇳 中文</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="lang-english" class="filter-checkbox" onchange="toggleFilter('language', 'english')">
+                            <label for="lang-english" class="filter-label">🇺🇸 英文</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 筛选结果统计 -->
+        <div class="filter-results">
+            <div class="filter-count" id="filterCount">找到 <strong>13</strong> 个工具</div>
+            <div class="filter-sort">
+                <span>排序：</span>
+                <select onchange="changeSortBy(this.value)">
+                    <option value="popular">最受欢迎</option>
+                    <option value="newest">最新发布</option>
+                    <option value="name">名称排序</option>
+                    <option value="price-low">价格由低到高</option>
+                    <option value="price-high">价格由高到低</option>
+                </select>
             </div>
         </div>
     </section>
@@ -297,6 +416,65 @@
         </div>
     </section>
 
+    <!-- 优惠码区域 -->
+    <section class="coupon-section">
+        <div class="coupon-container">
+            <div class="coupon-header">
+                <h2 class="coupon-title">💰 独家优惠码</h2>
+                <p class="coupon-subtitle">使用优惠码，享受专属折扣</p>
+            </div>
+            <div class="coupon-grid" id="couponGrid">
+                <!-- 内容由JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter订阅区域 -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-icon">📬</div>
+            <h2 class="newsletter-title">订阅AI工具周报</h2>
+            <p class="newsletter-subtitle">每周为你精选最新、最实用的AI工具，不错过任何好工具</p>
+
+            <div class="newsletter-benefits">
+                <div class="benefit-item">
+                    <span class="icon">✨</span>
+                    <span>每周精选工具</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">🎁</span>
+                    <span>独家优惠码</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">📚</span>
+                    <span>使用技巧教程</span>
+                </div>
+            </div>
+
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input
+                    type="email"
+                    id="newsletterEmail"
+                    class="newsletter-input"
+                    placeholder="输入你的邮箱地址..."
+                    required
+                >
+                <button type="submit" id="newsletterButton" class="newsletter-button">
+                    立即订阅
+                </button>
+            </form>
+
+            <p class="newsletter-privacy">
+                🔒 我们尊重你的隐私，不会发送垃圾邮件
+            </p>
+
+            <div id="newsletterSuccess" class="newsletter-success">
+                <strong>🎉 订阅成功！</strong><br>
+                欢迎加入AI工具爱好者社区，第一期周报即将发送到你的邮箱
+            </div>
+        </div>
+    </section>
+
     <!-- 社交分享区域 -->
     <section class="share-section">
         <div class="container">
@@ -376,6 +554,11 @@
         </div>
     </section>
 
+    <!-- 深色模式切换按钮 -->
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()" aria-label="切换深色模式">
+        🌙
+    </button>
+
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
@@ -401,6 +584,21 @@
 
     <!-- 社交分享功能 -->
     <script src="share.js"></script>
+
+    <!-- 深色模式 -->
+    <script src="dark-mode.js"></script>
+
+    <!-- Newsletter订阅 -->
+    <script src="newsletter.js"></script>
+
+    <!-- 优惠码功能 -->
+    <script src="coupon.js"></script>
+
+    <!-- 每日推荐 -->
+    <script src="daily-pick.js"></script>
+
+    <!-- 高级筛选器 -->
+    <script src="advanced-filter.js"></script>
 
     <script>
         // 简单的搜索功能

@@ -1,0 +1,128 @@
+/* 深色模式样式 */
+
+/* 深色模式变量 */
+:root {
+    --bg-primary: #f5f5f7;
+    --bg-secondary: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #1d1d1f;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: #1d1d1f;
+    --card-shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* 深色模式切换按钮 */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.theme-toggle:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* 深色模式下的背景 */
+[data-theme="dark"] body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(29, 29, 31, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .search-section {
+    background: linear-gradient(135deg, #1d1d1f 0%, #2d2d2f 100%);
+}
+
+[data-theme="dark"] .tool-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tool-card:hover {
+    background: #2d2d2f;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .footer {
+    background: rgba(29, 29, 31, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .btn-primary {
+    background: linear-gradient(135deg, #0a84ff 0%, #0066cc 100%);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #0a84ff;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .filter-btn.active {
+    background: linear-gradient(135deg, #0a84ff 0%, #0066cc 100%);
+    color: white;
+}
+
+[data-theme="dark"] .share-section,
+[data-theme="dark"] .comments-section {
+    background: rgba(29, 29, 31, 0.9);
+}
+
+[data-theme="dark"] .share-btn,
+[data-theme="dark"] .comments-tips {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}
