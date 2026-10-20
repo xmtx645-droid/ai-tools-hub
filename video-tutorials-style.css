@@ -1,0 +1,137 @@
+/* 视频教程样式 */
+.video-tutorials-section {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.video-tutorials-section h3 {
+    font-size: 24px;
+    color: #1d1d1f;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-list {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.video-item {
+    background: #f5f7fa;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-item:hover {
+    background: #e8ecf1;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.video-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover .video-icon {
+    transform: scale(1.1);
+}
+
+.video-info {
+    flex: 1;
+}
+
+.video-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 5px;
+}
+
+.video-meta {
+    font-size: 13px;
+    color: #86868b;
+}
+
+.video-tutorials-section h4 {
+    font-size: 18px;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* 深色模式 */
+[data-theme="dark"] .video-tutorials-section {
+    background: rgba(29, 29, 31, 0.9);
+}
+
+[data-theme="dark"] .video-tutorials-section h3,
+[data-theme="dark"] .video-tutorials-section h4 {
+    color: #f5f5f7;
+}
+
+[data-theme="dark"] .video-item {
+    background: #2d2d2f;
+}
+
+[data-theme="dark"] .video-item:hover {
+    background: #3d3d3f;
+}
+
+[data-theme="dark"] .video-title {
+    color: #f5f5f7;
+}
+
+[data-theme="dark"] .video-meta {
+    color: #a1a1a6;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .video-tutorials-section {
+        padding: 25px 20px;
+    }
+
+    .video-tutorials-section h3 {
+        font-size: 20px;
+    }
+
+    .video-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .video-title {
+        font-size: 15px;
+    }
+
+    .video-meta {
+        font-size: 12px;
+    }
+}

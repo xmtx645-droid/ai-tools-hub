@@ -6,6 +6,7 @@
     <title>ChatGPT - AI对话助手 | AI工具导航</title>
     <meta name="description" content="ChatGPT是OpenAI推出的强大AI对话助手，支持写作、编程、翻译等多种任务">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="video-tutorials-style.css">
     <style>
         .tool-detail {
             background: white;
@@ -507,6 +508,14 @@
                 </ul>
             </div>
 
+            <!-- 视频教程区域 -->
+            <div class="section">
+                <section class="video-tutorials-section">
+                    <h3>📹 视频教程</h3>
+                    <div id="videoTutorialsContainer"></div>
+                </section>
+            </div>
+
             <div class="cta-section">
                 <h2>立即开始使用ChatGPT</h2>
                 <p style="margin-bottom:30px;">加入全球数亿用户，体验AI的强大能力</p>
@@ -543,5 +552,10 @@
             <p>联系方式：contact@aitools.com</p>
         </div>
     </footer>
+
+    <script src="video-tutorials.js"></script>
+    <script>
+        renderVideoTutorials('chatgpt', 'videoTutorialsContainer');
+    </script>
 </body>
 </html>
